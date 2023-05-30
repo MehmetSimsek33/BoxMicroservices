@@ -1,0 +1,5 @@
+package TechK.common.utilities.mapping;
+
+public class ModelMapperService {
+
+}

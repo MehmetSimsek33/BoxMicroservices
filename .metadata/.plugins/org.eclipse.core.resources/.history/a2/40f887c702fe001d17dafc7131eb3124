@@ -1,0 +1,26 @@
+package TechK.common.utilities.mapping;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
+
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
+public class ModelMapperManager implements ModelMapperService {@Override
+	public TechK.common.utilities.mapping.ModelMapper forResponse() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TechK.common.utilities.mapping.ModelMapper forRequest() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
+
+}

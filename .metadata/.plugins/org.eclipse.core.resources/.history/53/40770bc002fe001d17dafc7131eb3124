@@ -1,0 +1,16 @@
+package TechK.common.utilities.mapping;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
+
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
+public class ModelMapperManager implements ModelMapperService {
+	private ModelMapper modelMapper;
+
+
+
+
+}
