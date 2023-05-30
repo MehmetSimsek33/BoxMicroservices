@@ -1,0 +1,5 @@
+package TechK.boxservice.data.responses;
+
+public class GetAllResponses {
+
+}

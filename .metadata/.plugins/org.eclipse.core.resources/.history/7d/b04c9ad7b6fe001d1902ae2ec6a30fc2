@@ -1,0 +1,8 @@
+package TechK.boxservice.service.abstracts.box;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class BoxMongoEntityManager {
+
+}

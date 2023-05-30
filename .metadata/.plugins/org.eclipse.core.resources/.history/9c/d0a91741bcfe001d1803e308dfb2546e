@@ -1,0 +1,8 @@
+package TechK.boxservice.core.mapping;
+
+import org.modelmapper.ModelMapper;
+
+public interface ModelMapperManager {
+	ModelMapper forRequest();
+	ModelMapper forResponse();
+}

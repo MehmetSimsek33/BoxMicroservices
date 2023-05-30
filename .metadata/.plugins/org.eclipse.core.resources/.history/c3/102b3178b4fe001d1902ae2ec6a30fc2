@@ -1,0 +1,5 @@
+package TechK.boxservice.data.requests.box;
+
+public class CreateBoxRequest {
+
+}

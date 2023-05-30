@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.data.annotation.Id"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="TechK.boxservice.data.requests.box.UpdateBoxRequest"/>
+    <fullyQualifiedTypeName name="TechK.boxservice.data.responses.UpdateBoxResponse"/>
+    <fullyQualifiedTypeName name="lombok.Getter"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="org.springframework.data.mongodb.repository.MongoRepository"/>
+    <fullyQualifiedTypeName name="lombok.RequiredArgsConstructor"/>
+    <fullyQualifiedTypeName name="TechK.boxservice.service.abstracts.box.entity.BoxMongoEntityService"/>
+    <fullyQualifiedTypeName name="org.modelmapper.ModelMapper"/>
+    <fullyQualifiedTypeName name="TechK.boxservice.repositories.mongodb.BoxMongoRepository"/>
+    <fullyQualifiedTypeName name="TechK.common.utilities.mapping.ModelMapperManager"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="TechK.common.utilities.mapping.ModelMapperService"/>
+    <fullyQualifiedTypeName name="TechK.boxservice.data.entities.Box"/>
+    <fullyQualifiedTypeName name="TechK.boxservice.core.mapping.ModelMapperService"/>
+    <fullyQualifiedTypeName name="TechK.boxservice.service.constant.BoxMessages"/>
+    <fullyQualifiedTypeName name="TechK.common.utilities.results.SuccessDataResult"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.DeleteMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="TechK.common.utilities.results.Result"/>
+    <fullyQualifiedTypeName name="TechK.boxservice.service.abstracts.box.BoxService"/>
+    <fullyQualifiedTypeName name="TechK.boxservice.data.responses.CreateBoxResponse"/>
+    <fullyQualifiedTypeName name="TechK.boxservice.data.requests.box.CreateBoxRequest"/>
+    <fullyQualifiedTypeName name="TechK.boxservice.data.responses.GetAllBoxResponses"/>
+    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.Builder"/>
+    <fullyQualifiedTypeName name="org.springframework.data.mongodb.core.mapping.Document"/>
+    <fullyQualifiedTypeName name="lombok.Data"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,43 @@
+package TechK.boxservice.service.abstracts.box.entity;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import TechK.boxservice.data.entities.Box;
+import TechK.common.utilities.results.Result;
+
+@Service
+public class BoxMongoEntityManager implements BoxMongoEntityService {
+
+	@Override
+	public Box createAuthor(Box box) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Result delete(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Box update(Box box) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Box> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Box getById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

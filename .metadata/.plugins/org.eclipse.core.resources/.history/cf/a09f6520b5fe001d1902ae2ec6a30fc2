@@ -1,0 +1,6 @@
+package TechK.boxservice.service.abstracts;
+
+public class BoxService {
+
+	
+}

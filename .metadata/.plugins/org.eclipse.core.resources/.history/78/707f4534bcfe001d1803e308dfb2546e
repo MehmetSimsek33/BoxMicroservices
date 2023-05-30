@@ -1,0 +1,5 @@
+package TechK.boxservice.core.mapping;
+
+public class ModelMapperService {
+
+}

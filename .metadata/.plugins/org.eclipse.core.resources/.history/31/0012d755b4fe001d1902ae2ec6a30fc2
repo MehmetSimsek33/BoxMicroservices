@@ -1,0 +1,6 @@
+package TechK.boxservice.data.responses;
+
+public class UpdateBoxResponse {
+	private String boxType;
+	private int state;
+}

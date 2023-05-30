@@ -1,0 +1,17 @@
+package TechK.boxservice.service.abstracts.box;
+
+import java.util.List;
+
+import TechK.boxservice.data.requests.box.CreateBoxRequest;
+import TechK.boxservice.data.responses.CreateBoxResponse;
+import TechK.common.utilities.results.DataResult;
+import TechK.common.utilities.results.Result;
+
+public interface BoxService {
+
+	DataResult<CreateBoxRequest> createAuthor(CreateBoxResponse createBoxResponse);
+	Result delete(String id);
+	DataResult<AuthorDto> update(UpdateAuthorRequest updateAuthorRequest);
+	DataResult<List<AuthorDto>> getAll();
+	DataResult<AuthorDto> getById(String id);
+}

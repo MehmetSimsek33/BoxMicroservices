@@ -1,0 +1,6 @@
+package TechK.boxservice.data.requests.box;
+
+public class CreateBoxRequest {
+	private String boxType;
+	private int state;
+}
