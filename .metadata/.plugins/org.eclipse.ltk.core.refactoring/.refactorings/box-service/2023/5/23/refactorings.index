@@ -8,3 +8,5 @@
 1685428940454	Move compilation unit
 1685429131657	Rename type 'GetAllResponses'
 1685429677332	Move compilation unit
+1685517125237	Rename type 'GetAllBoxResponses'
+1685517130635	Rename type 'GetByBoxResponses'

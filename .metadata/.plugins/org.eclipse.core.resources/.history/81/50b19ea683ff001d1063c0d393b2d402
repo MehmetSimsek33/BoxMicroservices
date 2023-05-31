@@ -1,0 +1,34 @@
+package TechK.boxservice;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.context.annotation.Bean;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+
+import TechK.boxservice.repositories.mongodb.BoxMongoRepository;
+
+@SpringBootApplication
+@EnableDiscoveryClient
+@EnableMongoRepositories(basePackageClasses = BoxMongoRepository.class)
+public class BoxServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(BoxServiceApplication.class, args);
+	}
+//	@Bean
+//	public ModelMapper getModelMapper() {
+//		return new ModelMapper();
+//	}
+//	@Bean
+//	public ModelMapperService getMapperService(ModelMapper modelMapper) {
+//		return  new ModelMapperManager(modelMapper);
+//	}
+ 
+	@Bean
+	public ModelMapper modelMapper() {
+		return new ModelMapper();
+	}
+
+}

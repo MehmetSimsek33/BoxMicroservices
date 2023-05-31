@@ -1,6 +1,8 @@
 package TechK.boxservice.service.abstracts.box;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -9,12 +11,14 @@ import TechK.boxservice.data.entities.Box;
 import TechK.boxservice.data.requests.box.CreateBoxRequest;
 import TechK.boxservice.data.requests.box.UpdateBoxRequest;
 import TechK.boxservice.data.responses.CreateBoxResponse;
-import TechK.boxservice.data.responses.GetAllBoxResponses;
+import TechK.boxservice.data.responses.GetBoxResponses;
 import TechK.boxservice.data.responses.UpdateBoxResponse;
 import TechK.boxservice.service.abstracts.box.entity.BoxMongoEntityService;
 import TechK.boxservice.service.constant.BoxMessages;
+import TechK.common.utilities.exceptions.BusinessExcaption;
 import TechK.common.utilities.results.DataResult;
 import TechK.common.utilities.results.Result;
+import TechK.common.utilities.results.SuccesResult;
 import TechK.common.utilities.results.SuccessDataResult;
 import lombok.AllArgsConstructor;
 
@@ -35,26 +39,44 @@ public class BoxManager implements BoxService {
 
 	@Override
 	public Result delete(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		checkIfBoxId(id);
+		return new SuccesResult(BoxMessages.BoxDeleted);
 	}
 
 	@Override
-	public DataResult<UpdateBoxResponse> update(UpdateBoxRequest updateBoxResponse) {
-		// TODO Auto-generated method stub
-		return null;
+	public DataResult<UpdateBoxResponse> update(UpdateBoxRequest updateBoxRequest) {
+		checkIfBoxId(updateBoxRequest.getId());
+		Box box = this.modelMapperService.forRequest().map(updateBoxRequest, Box.class);
+		UpdateBoxResponse updateBoxResponse = this.modelMapperService.forRequest().map(box, UpdateBoxResponse.class);
+		box = boxMongoEntityService.update(box);
+		return new SuccessDataResult<UpdateBoxResponse>(updateBoxResponse, BoxMessages.BoxUpdated);
 	}
 
 	@Override
-	public DataResult<List<GetAllBoxResponses>> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public DataResult<List<GetBoxResponses>> getAll() {
+		List<Box> boxes = this.boxMongoEntityService.getAll();
+		List<GetBoxResponses> getAllBoxResponses = boxes.stream()
+				.map(box -> this.modelMapperService.forResponse().map(box, GetBoxResponses.class))
+				.collect(Collectors.toList());
+		return new SuccessDataResult<List<GetBoxResponses>>(getAllBoxResponses, BoxMessages.BoxGetAll);
 	}
 
 	@Override
-	public DataResult<GetAllBoxResponses> getById(String id) {
-		// TODO Auto-generated method stub
-		return null;
+	public DataResult<GetBoxResponses> getById(String id) {
+		checkIfBoxId(id);
+		Box box = this.boxMongoEntityService.getById(id);
+		GetBoxResponses getBoxResponse = this.modelMapperService.forResponse().map(box, GetBoxResponses.class);
+		return new SuccessDataResult<GetBoxResponses>(getBoxResponse, BoxMessages.BoxGet);
+	}
+
+	private Box checkIfBoxId(String id) {
+		Box box = this.boxMongoEntityService.getById(id);
+		if (box == null) {
+			throw new BusinessExcaption(BoxMessages.BoxExists);
+		}
+		return box;
+
 	}
 
 }

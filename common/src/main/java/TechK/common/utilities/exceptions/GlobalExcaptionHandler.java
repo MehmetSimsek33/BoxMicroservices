@@ -32,23 +32,22 @@ public class GlobalExcaptionHandler {
 
 	@ExceptionHandler
 	@ResponseStatus(code = HttpStatus.BAD_REQUEST)
-	public ErrorDataResult<Object> handleBussinesExcaption(BusinessException businessExcaption) {
+	public ErrorDataResult<Object> handleBussinesExcaption(BusinessExcaption businessExcaption) {
 		ErrorDataResult<Object> erroDataResult = new ErrorDataResult<Object>(businessExcaption.getMessage(),
 				"BUSSINESS EXCEPTION");
 		return erroDataResult;
 	}
+
 	@ExceptionHandler(HttpMessageNotReadableException.class)
 	public ErrorDataResult<Object> handleGeneralhException(InvalidFormatException ex) {
-		ErrorDataResult<Object> erroDataResult = new ErrorDataResult<Object>(ex.getMessage(),
-				"TYPE EXCEPTION");
+		ErrorDataResult<Object> erroDataResult = new ErrorDataResult<Object>(ex.getMessage(), "TYPE EXCEPTION");
 		return erroDataResult;
 
 	}
-	
+
 	@ExceptionHandler(Exception.class)
 	public ErrorDataResult<Object> handleGeneralhException(Exception ex) {
-		ErrorDataResult<Object> erroDataResult = new ErrorDataResult<Object>(ex.getMessage(),
-				"EXCEPTION");
+		ErrorDataResult<Object> erroDataResult = new ErrorDataResult<Object>(ex.getMessage(), "EXCEPTION");
 		return erroDataResult;
 
 	}

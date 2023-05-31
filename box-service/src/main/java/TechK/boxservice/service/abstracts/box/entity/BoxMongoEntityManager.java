@@ -1,6 +1,7 @@
 package TechK.boxservice.service.abstracts.box.entity;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -34,7 +35,7 @@ public class BoxMongoEntityManager implements BoxMongoEntityService {
 
 	@Override
 	public Box getById(String id) {
-		return this.boxMongoRepository.findById(id).get();
+		return this.boxMongoRepository.findById(id).orElse(null);
 	}
 
 	@Override
