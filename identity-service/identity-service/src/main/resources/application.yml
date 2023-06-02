@@ -1,0 +1,16 @@
+spring:
+ cloud:
+   gateway:
+     routes:
+       - id: box
+         uri: lb://box
+         predicates:
+           - Path=/box/**
+         filters:
+           - AuthenticationFilter
+           
+       - id: identity-service
+         uri: lb://IDENTITY-SERVICE
+         predicates:
+           - Path=/auth/**           
+           
